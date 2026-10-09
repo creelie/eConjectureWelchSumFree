@@ -1,0 +1,403 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{booktabs}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{innerconj}{Conjecture}
+\newenvironment{conjecture}[1]{\renewcommand{\theinnerconj}{#1}\innerconj}{\endinnerconj}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\hypersetup{pdftitle={The Welch function is not third-order sum-free},pdfauthor={Deep Bhattacharjee}}
+\providecommand{\doi}[1]{\url{https://doi.org/#1}}
+
+\begin{document}
+
+\title{The Welch function is not third-order sum-free}
+
+\author{Deep Bhattacharjee}
+\address{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL),\newline Bhubaneswar, Odisha 751030, India}
+\email{d.bhattacharjee@erl-forschung.de}
+\email{itsdeep@live.com}
+\urladdr{https://orcid.org/0000-0003-0466-750X}
+\thanks{Corresponding author: \href{mailto:d.bhattacharjee@erl-forschung.de}{d.bhattacharjee@erl-forschung.de}; ORCID \href{https://orcid.org/0000-0003-0466-750X}{\mbox{0000-0003-0466-750X}}}
+
+\subjclass[2020]{Primary 11T06; Secondary 11T23, 94A60}
+\keywords{sum-free functions, Welch function, almost perfect nonlinear functions, Kloosterman sums, linearized polynomials}
+
+\begin{abstract}
+Let $n=2m+1$. Hou and Zhao conjectured that for $n\ge7$ the Welch function $X^{2^m+3}$ on $\F_{2^n}$ sums to zero over some three-dimensional affine subspace, that is, it is not third-order sum-free. We prove this. The proof counts exactly the elements $x$ for which some subspace spanned by $1$, $x$ and a third element gives a zero sum: there are $(2^n+1-3K_n)/4$ of them, where $K_n$ is a binary Kloosterman sum.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+A function $f\colon\F_{2^n}\to\F_{2^n}$ is \emph{$k$th order sum-free} if $\sum_{a\in A}f(a)\ne0$ for every $k$-dimensional affine subspace $A$ of $\F_{2^n}$ over $\F_2$. Carlet introduced this notion~\cite{Carlet-JC,Carlet-DCC}; for $k=2$ it is the APN property. Throughout, $n=2m+1$ is odd, $q=2^n$, $F=\F_q$ and $\Tr\colon F\to\F_2$ is the absolute trace. The \emph{Welch function} is
+\[
+W_n(X)=X^{2^m+3}.
+\]
+It is APN~\cite{Dobbertin}, and decimating a binary $m$-sequence by $2^m+3$ gives a three-valued cross-correlation, as Welch conjectured~\cite{CCD}. For $m\ge2$ it has algebraic degree $3$, so the first open question about its higher-order sum-freedom is the third order. For $m=2$ the Welch function is $X^7=X^{2^3-1}$, which is third-order sum-free by a result of Carlet~\cite[Proposition~1]{Carlet-JC}. Hou and Zhao~\cite{HZ} reduced the question to a family of linearized polynomials, computed it for $7\le n\le15$, and proposed the following statement~\cite[Conjecture~4.10]{HZ}.
+
+\begin{conjecture}{1}\label{conj}
+For $n=2m+1\ge7$, the Welch function on $\F_{2^n}$ is not third-order sum-free.
+\end{conjecture}
+
+We prove Conjecture~\ref{conj}. The reduction of Hou and Zhao goes through the polynomial
+\begin{equation}\label{eq:g}
+g(X,Y)=Y^{2^m}(X^2+X)+Y^2(X^{2^m}+X)+Y(X^{2^m}+X^2).
+\end{equation}
+For $x\in F$ let $Z(x)=\{y\in F: g(x,y)=0\}$. Since $g(x,Y)$ is an additive polynomial in $Y$, $Z(x)$ is a vector space over $\F_2$, and it contains $1$ and $x$. By Lemma~\ref{lem:reduction} below, $W_n$ fails to be third-order sum-free exactly when $\dim_{\F_2}Z(x)\ge3$ for some $x\in F\setminus\F_2$. Our main result decides this dimension for every $x$.
+
+\begin{theorem}\label{thm:criterion}
+Let $n=2m+1\ge3$ and $x\in F\setminus\F_2$, and put $u=x^{2^m}$. Then $\dim_{\F_2}Z(x)\in\{2,3\}$, and $\dim_{\F_2}Z(x)=3$ if and only if
+\[
+\Tr\Bigl(\frac{1}{x+u}\Bigr)=1\qquad\text{and}\qquad\Tr\Bigl(\frac{xu}{x+u}\Bigr)=1 .
+\]
+\end{theorem}
+
+Let
+\[
+K_n=\sum_{z\in F^*}(-1)^{\Tr(z+z^{-1})}
+\]
+be the Kloosterman sum of $F$. The conditions of Theorem~\ref{thm:criterion} turn the count of the elements $x$ with $\dim Z(x)=3$ into Kloosterman sums.
+
+\begin{theorem}\label{thm:count}
+Let $n=2m+1\ge3$, and let $N_n$ be the number of $x\in F\setminus\F_2$ with $\dim_{\F_2}Z(x)=3$. Then
+\[
+N_n=\frac{2^n+1-3K_n}{4}.
+\]
+\end{theorem}
+
+By Weil's bound~\cite{Weil} (see also~\cite[Chapter~5]{LN}), $|K_n|\le2\cdot2^{n/2}$. Hence
+\[
+N_n\ge\frac{2^n+1-6\cdot2^{n/2}}{4}=\frac{(2^{n/2}-3)^2-8}{4}>0\qquad\text{for }n\ge7 .
+\]
+
+\begin{corollary}\label{cor:conj}
+Conjecture~\ref{conj} is true. More precisely, for $n=2m+1\ge5$ the Welch function sums to zero over exactly
+\[
+\frac{N_n\,(2^n-1)}{42}
+\]
+three-dimensional linear subspaces of $F$, and over exactly $2^{n-3}$ times as many three-dimensional affine subspaces. This number is positive for every $n\ge7$ and is zero for $n=5$.
+\end{corollary}
+
+By a theorem of Carlitz~\cite{Carlitz} (see also~\cite[Chapter~5]{LN}), $K_n=-(\omega^n+\bar\omega^n)$ with $\omega=(-1+\sqrt{-7})/2$, because $K_1=1$. So $K_0=-2$, $K_1=1$ and $K_n=-K_{n-1}-2K_{n-2}$, which gives Table~\ref{tab}. Hou and Zhao~\cite[Corollary~4.9]{HZ} showed that $\dim Z(x)=3$ for some $x\in F\setminus\F_2$ if and only if the polynomial $\det D^*(X)$ built from a Dickson matrix has more than two roots in $F$; the number of its roots in $F$ is $2+N_n$. For $5\le n\le15$ these are the values Hou and Zhao computed~\cite[Table~1]{HZ}.
+
+\begin{table}[ht]
+\caption{The Kloosterman sum $K_n$, the count $N_n$ of Theorem~\ref{thm:count} and the number $2+N_n$ of roots of $\det D^*(X)$ in $\F_{2^n}$.}\label{tab}
+\centering
+\begin{tabular}{rrrr}
+\toprule
+$n$ & $K_n$ & $N_n$ & $2+N_n$\\
+\midrule
+5 & 11 & 0 & 2\\
+7 & $-13$ & 42 & 44\\
+9 & $-5$ & 132 & 134\\
+11 & 67 & 462 & 464\\
+13 & $-181$ & 2184 & 2186\\
+15 & 275 & 7986 & 7988\\
+17 & $-101$ & 32844 & 32846\\
+19 & $-797$ & 131670 & 131672\\
+21 & 2795 & 522192 & 522194\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The proof of Theorem~\ref{thm:criterion} uses the automorphism $\rho(z)=z^{2^{m+1}}$ of $F$, whose square is the Frobenius map $z\mapsto z^2$ and whose inverse is $z\mapsto z^{2^m}$. Applying $\rho$ to the equation $g(x,y)=0$ and eliminating $y^{2^m}$ produces an additive polynomial of degree $8$ in $y$. Its roots form a three-dimensional space $V$ that always lies in $F$ and contains $Z(x)$, and a linear map built from $g(x,\cdot)$ moves $V$ into $Z(x)$. Whether $Z(x)=V$ is then decided by two elements of $\F_2$, and both turn out to be traces of explicit rational functions of $x$ and $u$, because an element of $\F_2$ equals its own trace when $n$ is odd.
+
+Section~\ref{sec:prelim} collects facts about the trace and the reduction of Hou and Zhao. Section~\ref{sec:fixed} studies a fixed $x$, Section~\ref{sec:criterion} proves Theorem~\ref{thm:criterion}, and Section~\ref{sec:count} proves Theorem~\ref{thm:count} and Corollary~\ref{cor:conj}.
+
+\section{Preliminaries}\label{sec:prelim}
+
+\begin{lemma}\label{lem:frob}
+Let $\rho(z)=z^{2^{m+1}}$ for $z\in F$.
+\begin{enumerate}
+\item[(a)] $\rho\bigl(z^{2^m}\bigr)=z=\rho(z)^{2^m}$ and $\rho(\rho(z))=z^2$ for every $z\in F$.
+\item[(b)] The elements of $F$ fixed by $z\mapsto z^{2^m}$, and those fixed by $\rho$, are $0$ and $1$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) holds because $z^{2^n}=z$, $2^m\cdot2^{m+1}=2^n$ and $2^{m+1}\cdot2^{m+1}=2\cdot2^n$. For (b), the fixed field of $z\mapsto z^{2^k}$ is $\F_{2^{\gcd(k,n)}}$, and $\gcd(m,2m+1)=\gcd(m+1,2m+1)=1$.
+\end{proof}
+
+Let $T_0=\{w\in F:\Tr(w)=0\}$, put $\wp(z)=z^2+z$, and for $z\in F$ let
+\[
+T_m(z)=\sum_{i=0}^{m-1}z^{2^i}.
+\]
+
+\begin{lemma}\label{lem:trace}
+\begin{enumerate}
+\item[(a)] $\Tr\bigl(z^{2^k}\bigr)=\Tr(z)$ for all $z\in F$ and $k\ge0$; in particular $\Tr(\rho(z))=\Tr(z)$.
+\item[(b)] $\Tr(1)=1$, so $\Tr(\varepsilon)=\varepsilon$ for $\varepsilon\in\F_2$.
+\item[(c)] Each of the maps $z\mapsto\wp(z)$, $z\mapsto z^{2^m}+z$ and $z\mapsto\rho(z)+z$ is $\F_2$-linear with kernel $\F_2$ and image $T_0$.
+\item[(d)] $\wp(T_m(z))=T_m(\wp(z))=z^{2^m}+z$ for all $z\in F$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) is clear and (b) holds because $n$ is odd. In (c), the kernels are $\F_2$ by Lemma~\ref{lem:frob}(b), so each image has $q/2$ elements; each image lies in $T_0$ by (a), and $|T_0|=q/2$. For (d), both sides telescope: $\wp(T_m(z))=\sum_{i=1}^{m}z^{2^i}+\sum_{i=0}^{m-1}z^{2^i}=z^{2^m}+z$, and $T_m(z^2+z)$ is the same sum.
+\end{proof}
+
+The next lemma is the reduction of Hou and Zhao~\cite[Section~4]{HZ}; we include the short proof.
+
+\begin{lemma}\label{lem:reduction}
+\begin{enumerate}
+\item[(a)] For $x,y\in F$,
+\[
+\sum_{a_1,a_2,a_3\in\F_2}W_n(a_1x+a_2y+a_3)=g(x,y).
+\]
+\item[(b)] Let $A=c+A_0$ be a three-dimensional affine subspace of $F$ with linear part $A_0$. Then $\sum_{a\in A}W_n(a)=\sum_{a\in A_0}W_n(a)$, and $\sum_{a\in A_0}W_n(a)=b^{2^m+3}\sum_{a\in b^{-1}A_0}W_n(a)$ for every $b\in A_0\setminus\{0\}$.
+\item[(c)] $W_n$ is not third-order sum-free if and only if $\dim_{\F_2}Z(x)\ge3$ for some $x\in F\setminus\F_2$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Since $a_i^{2^k}=a_i$ for $a_i\in\F_2$,
+\[
+W_n(a_1x+a_2y+a_3)=(a_1x^{2^m}+a_2y^{2^m}+a_3)(a_1x^2+a_2y^2+a_3)(a_1x+a_2y+a_3).
+\]
+Expanding, we get a sum of terms $a_ia_ja_k\,\alpha\beta\gamma$ with $\alpha\in\{x^{2^m},y^{2^m},1\}$, $\beta\in\{x^2,y^2,1\}$ and $\gamma\in\{x,y,1\}$. Summed over $(a_1,a_2,a_3)\in\F_2^3$, a monomial in the $a_i$ gives $0$ unless all three of $a_1,a_2,a_3$ occur in it, because $\sum_{a\in\F_2}1=0$. So only the six terms in which $i,j,k$ are distinct survive, each with sum $1$, and they add up to $g(x,y)$.
+
+(b) Write the elements of $A$ as $c+a$ with $a\in A_0$ and expand $W_n(c+a)=(c^{2^m}+a^{2^m})(c^2+a^2)(c+a)$. Apart from $a^{2^m}a^2a$, every one of the eight products is a constant times a product of at most two $\F_2$-linear functions of $a$. In coordinates $a=a_1e_1+a_2e_2+a_3e_3$ with respect to a basis of $A_0$, such a product is a combination of monomials in at most two of the $a_i$, and its sum over $A_0$ vanishes as in (a). The second statement holds because $W_n$ is a power function.
+
+(c) By (b), $W_n$ is not third-order sum-free if and only if it sums to zero over a three-dimensional linear subspace that contains $1$. Such a subspace is $\langle 1,x,y\rangle$ with $1,x,y$ linearly independent over $\F_2$, and by (a) the sum over it is $g(x,y)$. Since $Z(x)$ always contains $\langle1,x\rangle$, a suitable $y$ exists if and only if $\dim Z(x)\ge3$.
+\end{proof}
+
+\section{A fixed element \texorpdfstring{$x$}{x}}\label{sec:fixed}
+
+In this section and the next, $x\in F\setminus\F_2$ is fixed and
+\[
+u=x^{2^m},\qquad t=x^2+x,\qquad d=x+u,\qquad v=u^2+u .
+\]
+By Lemma~\ref{lem:frob}, $\rho(x)=u^2$ and $\rho(u)=x$, so
+\begin{equation}\label{eq:rho}
+\rho(t)=v^2,\quad \rho(d)=d+v=x+u^2,\quad \rho(d+v)=d^2,\quad \rho(x^2+u)=u^4+x,\quad t^{2^m}=v .
+\end{equation}
+The elements $t$, $u^2+u=v$, $d$ and $d+v=x+\rho(x)$ are nonzero by Lemma~\ref{lem:frob}(b), and
+\begin{equation}\label{eq:t}
+t=d^2+d+v .
+\end{equation}
+Write $L(y)=g(x,y)$, so that
+\[
+L(y)=t\,y^{2^m}+d\,y^2+(x^2+u)\,y ,
+\]
+an $\F_2$-linear map of $F$ with kernel $Z(x)$. One checks directly that $L(1)=L(x)=0$.
+
+\begin{lemma}\label{lem:Tm}
+$L(y)=t\,T_m(\wp(y))+d\,\wp(y)$ for every $y\in F$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:trace}(d), $t\,T_m(\wp(y))+d\,\wp(y)=t(y^{2^m}+y)+d(y^2+y)=t\,y^{2^m}+d\,y^2+(t+d)\,y$, and $t+d=x^2+u$.
+\end{proof}
+
+Let
+\[
+Y(y)=\frac{d\,y^2+(x^2+u)\,y}{t},\qquad P(y)=v^2\,y+(d+v)\,Y(y)^4+(u^4+x)\,Y(y)^2 ,
+\]
+and define $\Phi\colon F\to F$ by $\Phi(y)=\rho\bigl(L(y)/t\bigr)$. Then $Y$, $P$ and $\Phi$ are $\F_2$-linear, $L(y)=t\bigl(y^{2^m}+Y(y)\bigr)$, and $\Phi(y)=0$ if and only if $L(y)=0$.
+
+\begin{lemma}\label{lem:key}
+$P(y)=\rho\bigl(L(\Phi(y))\bigr)$ for every $y\in F$.
+\end{lemma}
+
+\begin{proof}
+Let $\ell=L(y)/t$, so that $y^{2^m}=Y(y)+\ell$ and, by Lemma~\ref{lem:frob}(a), $\rho(y)=\bigl(y^{2^m}\bigr)^2=(Y(y)+\ell)^2$. Applying $\rho$ to $L(y)$ and using~\eqref{eq:rho},
+\[
+\rho(L(y))=v^2y+(d+v)\rho(y)^2+(u^4+x)\rho(y)=P(y)+(d+v)\ell^4+(u^4+x)\ell^2 .
+\]
+On the other hand $\rho(L(y))=\rho(t\ell)=v^2\rho(\ell)$. Hence $P(y)=v^2\rho(\ell)+(d+v)\ell^4+(u^4+x)\ell^2$. Now put $\ell'=\Phi(y)=\rho(\ell)$. By Lemma~\ref{lem:frob}(a), $\ell'^{\,2^m}=\ell$ and $\rho(\ell')=\ell^2$, so
+\[
+\rho(L(\ell'))=\rho\bigl(t\ell+d\ell'^2+(x^2+u)\ell'\bigr)=v^2\ell'+(d+v)\ell^4+(u^4+x)\ell^2=P(y). \qedhere
+\]
+\end{proof}
+
+Let $\Pi(y)=y(y+1)(y+x)(y+x+1)=\wp(y)\bigl(\wp(y)+t\bigr)=y^4+(t+1)y^2+ty$. It is an additive polynomial whose roots are the elements of $\langle1,x\rangle$. Put
+\[
+\lambda=\frac{(d+v)\,d^4}{t^4},\qquad c=\frac{t^3v^2}{d^4(d+v)},\qquad a=\frac{c}{t^2}=\frac{t\,v^2}{d^4(d+v)} .
+\]
+
+\begin{lemma}\label{lem:factor}
+As polynomials in $y$ over $F$, $P(y)=\lambda\,\Pi(y)\bigl(\Pi(y)+c\bigr)$. The roots of $P$ in an algebraic closure of $F$ form a three-dimensional $\F_2$-space $V$ that contains $\langle1,x\rangle$, and $V\setminus\langle1,x\rangle=\{y:\Pi(y)=c\}$.
+\end{lemma}
+
+\begin{proof}
+$P$ is an additive polynomial. Its coefficient of $y^8$ is $\lambda\ne0$ and its coefficient of $y$ is $v^2\ne0$, since $Y(y)^4$ and $Y(y)^2$ contain only $y^8$, $y^4$ and $y^2$. So $P$ has $8$ distinct roots, and they form a three-dimensional $\F_2$-space $V$. Since $Y(1)=1$ and $Y(x)=u$,
+\[
+P(1)=v^2+(d+v)+(u^4+x)=0,\qquad P(x)=v^2x+(d+v)u^4+(u^4+x)u^2=0 ,
+\]
+so $\langle1,x\rangle\subseteq V$. Choose $y_0\in V\setminus\langle1,x\rangle$. Then $V=\langle1,x\rangle\cup(y_0+\langle1,x\rangle)$ and, since $\Pi$ is additive,
+\[
+P(y)=\lambda\,\Pi(y)\,\Pi(y+y_0)=\lambda\,\Pi(y)\bigl(\Pi(y)+\Pi(y_0)\bigr).
+\]
+The coefficient of $y$ on the right is $\lambda\,t\,\Pi(y_0)$, because $\Pi(y)^2$ has only even powers of $y$. Comparing with $v^2$ gives $\Pi(y_0)=v^2/(\lambda t)=c$. Finally $c\ne0$, so the roots of $\Pi(y)+c$ are exactly the four elements of $V$ outside $\langle1,x\rangle$.
+\end{proof}
+
+\begin{lemma}\label{lem:inF}
+$\Tr(a)=0$. If $z\in F$ satisfies $\wp(z)=a$, then $\Tr(tz)=0$. Consequently $V\subseteq F$.
+\end{lemma}
+
+\begin{proof}
+From~\eqref{eq:t} one checks the identity
+\begin{equation}\label{eq:a}
+a=\wp\Bigl(\frac{v}{d^2}\Bigr)+\frac1d+\frac1{d+v};
+\end{equation}
+multiplied by $d^4(d+v)$ it reads $tv^2=v^2(d+v)+vd^2(d+v)+d^3(d+v)+d^4$, and the right side equals $v^2(d^2+d+v)$. By~\eqref{eq:rho}, $1/(d+v)=\rho(1/d)$, so $\Tr(1/(d+v))=\Tr(1/d)$ and $\Tr(a)=0$. By Lemma~\ref{lem:trace}(c) there are exactly two elements $z\in F$ with $\wp(z)=a$, and they differ by $1$; since $\Tr(t)=\Tr(\wp(x))=0$, the value $\Tr(tz)$ does not depend on the choice.
+
+Let $h=1/d$. Since $\Tr\bigl(h+\Tr(h)\bigr)=0$ by Lemma~\ref{lem:trace}(b), Lemma~\ref{lem:trace}(c) gives $z_2\in F$ with $\rho(z_2)+z_2=h+\Tr(h)$. By Lemma~\ref{lem:frob}(a),
+\[
+\wp(z_2)=\rho(\rho(z_2))+z_2=\rho\bigl(\rho(z_2)+z_2\bigr)+\bigl(\rho(z_2)+z_2\bigr)=\rho(h)+h=\frac1{d+v}+\frac1d ,
+\]
+so by~\eqref{eq:a} we may take $z=v/d^2+z_2$. First, by~\eqref{eq:t},
+\[
+\frac{tv}{d^2}=v+\frac vd+\frac{v^2}{d^2}=\wp(u)+\wp\Bigl(\frac vd\Bigr),
+\]
+which has trace $0$. Second, let $e=d+v=x+\rho(x)$. Then $\rho(e)=d^2$ by~\eqref{eq:rho}, and $\rho(e)+e=x^2+x=t$. Using Lemma~\ref{lem:trace}(a) and Lemma~\ref{lem:frob}(a) to move $z\mapsto z^{2^m}$ and $\rho$ through the trace,
+\begin{align*}
+\Tr(tz_2)&=\Tr(\rho(e)z_2)+\Tr(ez_2)=\Tr\bigl(e\,z_2^{2^m}\bigr)+\Tr(ez_2)=\Tr\bigl(e\,(\rho(z_2)+z_2)^{2^m}\bigr)\\
+&=\Tr\bigl(\rho(e)\,(\rho(z_2)+z_2)\bigr)=\Tr\bigl(d^2(h+\Tr(h))\bigr)=\Tr(d)+\Tr(h)\Tr(d^2)=0,
+\end{align*}
+since $\Tr(d)=\Tr(x+x^{2^m})=0$. Hence $\Tr(tz)=0$.
+
+Now Lemma~\ref{lem:trace}(c) gives $y\in F$ with $\wp(y)=tz$. Then $\Pi(y)=tz(tz+t)=t^2\wp(z)=c$, so $y\in V\setminus\langle1,x\rangle$ by Lemma~\ref{lem:factor}, and $V=\langle1,x,y\rangle\subseteq F$.
+\end{proof}
+
+\begin{lemma}\label{lem:delta}
+$V=\{y\in F: L(\Phi(y))=0\}$, $Z(x)\subseteq V$ and $\Phi(V)\subseteq Z(x)$. The element $\delta(x)=\Phi(y_0)$ is the same for all $y_0\in V\setminus\langle1,x\rangle$ and lies in $\langle1,x\rangle$. If $\delta(x)=0$ then $Z(x)=V$; otherwise $Z(x)=\langle1,x\rangle$.
+\end{lemma}
+
+\begin{proof}
+Since $V\subseteq F$ (Lemma~\ref{lem:inF}) and $\rho$ is injective, Lemma~\ref{lem:key} shows that $V=\{y\in F: L(\Phi(y))=0\}$. If $L(y)=0$ then $\Phi(y)=0$ and $y\in V$, so $Z(x)\subseteq V$; and $\Phi(V)\subseteq Z(x)$ by the same description of $V$. Two choices of $y_0$ differ by an element of $\langle1,x\rangle\subseteq Z(x)$, on which $\Phi$ vanishes. As $\langle1,x\rangle\subseteq Z(x)\subseteq V$ and $\dim V=3$, either $Z(x)=V$ or $Z(x)=\langle1,x\rangle$. In the first case $\delta(x)=0$. In the second case $\delta(x)\in\Phi(V)\subseteq\langle1,x\rangle$, and $\delta(x)\ne0$ because $y_0\notin Z(x)$.
+\end{proof}
+
+\begin{lemma}\label{lem:first}
+$\delta(x)\in\{0,1\}$ if and only if $\Tr(1/d)=1$.
+\end{lemma}
+
+\begin{proof}
+Take $y_0\in V\setminus\langle1,x\rangle$ and let $z=\wp(y_0)/t$. By Lemma~\ref{lem:factor}, $t^2\wp(z)=\wp(y_0)(\wp(y_0)+t)=c$, so $\wp(z)=a$. Let $\ell_0=L(y_0)/t$, so that $\delta(x)=\rho(\ell_0)$, and $\delta(x)\in\{0,1\}$ if and only if $\ell_0\in\{0,1\}$, that is, $\wp(\ell_0)=0$. By Lemma~\ref{lem:Tm}, $\ell_0=T_m(tz)+dz$. By Lemma~\ref{lem:trace}(d), \eqref{eq:rho} and~\eqref{eq:t},
+\[
+\wp(\ell_0)=(tz)^{2^m}+tz+d^2z^2+dz=v\,z^{2^m}+(t+d^2+d)\,z+d^2a=v\bigl(z^{2^m}+z\bigr)+d^2a=v\,T_m(a)+d^2a .
+\]
+Put $\gamma=d^2a/v$, so that $\wp(\ell_0)=v\,(T_m(a)+\gamma)$. On the other hand $\delta(x)\in\langle1,x\rangle$ by Lemma~\ref{lem:delta}, so $\ell_0=\delta(x)^{2^m}\in\{0,1,u,u+1\}$ and $\wp(\ell_0)\in\{0,v\}$. Therefore $\varepsilon=T_m(a)+\gamma$ lies in $\F_2$, and $\varepsilon=0$ exactly when $\delta(x)\in\{0,1\}$. By Lemma~\ref{lem:trace}(b) and~(a),
+\[
+\varepsilon=\Tr(\varepsilon)=\sum_{i=0}^{m-1}\Tr\bigl(a^{2^i}\bigr)+\Tr(\gamma)=m\Tr(a)+\Tr(\gamma)=\Tr(\gamma),
+\]
+using $\Tr(a)=0$ from Lemma~\ref{lem:inF}. By~\eqref{eq:t}, $\gamma=tv/(d^2(d+v))=v/d^2+v/(d+v)$. By~\eqref{eq:rho}, $\rho(t/d^2)=v^2/(d+v)^2$, so $\Tr(v/(d+v))=\Tr(t/d^2)$. Since $v+t=d^2+d$,
+\[
+\Tr(\gamma)=\Tr\Bigl(\frac{v+t}{d^2}\Bigr)=\Tr(1)+\Tr\Bigl(\frac1d\Bigr)=1+\Tr\Bigl(\frac1d\Bigr).
+\]
+So $\delta(x)\in\{0,1\}$ if and only if $\Tr(1/d)=1$.
+\end{proof}
+
+\section{Proof of Theorem~\ref{thm:criterion}}\label{sec:criterion}
+
+The objects of Section~\ref{sec:fixed} depend on $x$; we write $L_x$, $t_x$, $\Phi_x$, $V_x$ and $d_x=x+x^{2^m}$ when the dependence matters. The second condition of Theorem~\ref{thm:criterion} comes from the substitution $x\mapsto 1/x$.
+
+\begin{lemma}\label{lem:inverse}
+For $x\in F\setminus\F_2$ and $y\in F$, $g(1/x,y/x)=x^{-(2^m+3)}g(x,y)$. Moreover $\Phi_{1/x}(y)=x^{-1}\Phi_x(xy)$, $V_{1/x}=x^{-1}V_x$ and $\delta(1/x)=x^{-1}\delta(x)$.
+\end{lemma}
+
+\begin{proof}
+With $u=x^{2^m}$,
+\[
+u\,x^3\,g(1/x,y/x)=u\,x^3\Bigl(\frac{y^{2^m}}{u}\cdot\frac{1+x}{x^2}+\frac{y^2}{x^2}\cdot\frac{x+u}{xu}+\frac yx\cdot\frac{u+x^2}{x^2u}\Bigr)=g(x,y).
+\]
+So $L_{1/x}(y)=x^{-(2^m+3)}L_x(xy)$. Since $t_{1/x}=x^{-2}+x^{-1}=t_x/x^3$,
+\[
+\Phi_{1/x}(y)=\rho\Bigl(\frac{L_x(xy)}{u\,t_x}\Bigr)=\rho(u^{-1})\,\Phi_x(xy)=x^{-1}\Phi_x(xy).
+\]
+By the first statement of Lemma~\ref{lem:delta}, applied to $x$ and to $1/x$, $V_{1/x}=\{y\in F:L_{1/x}(\Phi_{1/x}(y))=0\}=\{y\in F:L_x(\Phi_x(xy))=0\}=x^{-1}V_x$. If $y_0\in V_x\setminus\langle1,x\rangle$, then $y_0/x\in V_{1/x}\setminus\langle1,1/x\rangle$, and $\delta(1/x)=\Phi_{1/x}(y_0/x)=x^{-1}\Phi_x(y_0)=x^{-1}\delta(x)$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:criterion}]
+By Lemma~\ref{lem:delta}, $\dim Z(x)\in\{2,3\}$, and $\dim Z(x)=3$ if and only if $\delta(x)=0$. Since $\delta(x)\in\langle1,x\rangle$ and $x\ne1$, $\delta(x)=0$ if and only if $\delta(x)\in\{0,1\}$ and $\delta(x)\in\{0,x\}$. By Lemma~\ref{lem:first}, the first condition is $\Tr(1/d_x)=1$. By Lemma~\ref{lem:inverse}, $\delta(x)\in\{0,x\}$ if and only if $\delta(1/x)\in\{0,1\}$, which by Lemma~\ref{lem:first} applied to $1/x$ means $\Tr(1/d_{1/x})=1$. Finally $d_{1/x}=1/x+1/u=(x+u)/(xu)$.
+\end{proof}
+
+\section{Counting}\label{sec:count}
+
+\begin{proof}[Proof of Theorem~\ref{thm:count}]
+For $x\in F\setminus\F_2$ let $d=x+x^{2^m}$, $u=x^{2^m}$, $\alpha(x)=(-1)^{\Tr(1/d)}$ and $\beta(x)=(-1)^{\Tr(xu/d)}$. By Theorem~\ref{thm:criterion},
+\[
+N_n=\frac14\sum_{x\in F\setminus\F_2}\bigl(1-\alpha(x)\bigr)\bigl(1-\beta(x)\bigr)=\frac14\Bigl(q-2-\sum\alpha-\sum\beta+\sum\alpha\beta\Bigr),
+\]
+all sums over $x\in F\setminus\F_2$. By Lemma~\ref{lem:trace}(c), $x\mapsto x+x^{2^m}$ maps $F\setminus\F_2$ two-to-one onto $T_0\setminus\{0\}$. Hence
+\[
+\sum\alpha=2\sum_{w\in T_0\setminus\{0\}}(-1)^{\Tr(1/w)}=\sum_{w\in F^*}\bigl(1+(-1)^{\Tr(w)}\bigr)(-1)^{\Tr(1/w)}=-1+K_n ,
+\]
+because $w\mapsto1/w$ permutes $F^*$ and $\sum_{w\in F^*}(-1)^{\Tr(w)}=-1$. The map $x\mapsto1/x$ permutes $F\setminus\F_2$, and $\beta(x)=\alpha(1/x)$ because $d_{1/x}=d/(xu)$; so $\sum\beta=K_n-1$. Finally, $x\mapsto x+1$ permutes $F\setminus\F_2$, leaves $d$ unchanged and sends $xu$ to $(x+1)(u+1)=xu+d+1$; since $\Tr(1)=1$,
+\[
+\beta(x+1)=(-1)^{\Tr((xu+1)/d)+1}=-\alpha(x)\beta(x).
+\]
+So $\sum\alpha\beta=-\sum\beta=1-K_n$, and
+\[
+N_n=\frac14\bigl(q-2-2(K_n-1)+1-K_n\bigr)=\frac{q+1-3K_n}{4}. \qedhere
+\]
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:conj}]
+If $\dim Z(x)=3$, then $A=Z(x)$ is a three-dimensional subspace containing $1$ over which $W_n$ sums to zero, by Lemma~\ref{lem:reduction}(a). Conversely, let $A\ni1$ be such a subspace and $x'\in A\setminus\F_2$. Writing $A=\langle1,x',y'\rangle$, Lemma~\ref{lem:reduction}(a) gives $g(x',y')=0$, so $A\subseteq Z(x')$, and $Z(x')=A$ by Theorem~\ref{thm:criterion}. Hence the subspaces containing $1$ with zero sum correspond to the elements $x$ with $\dim Z(x)=3$, six elements to each subspace, and there are $N_n/6$ of them.
+
+Let $\mathcal S$ be the set of three-dimensional linear subspaces with zero sum. By Lemma~\ref{lem:reduction}(b), $A\in\mathcal S$ and $b\in F^*$ imply $bA\in\mathcal S$. The pairs $(A,b)$ with $A\in\mathcal S$ and $b\in A\setminus\{0\}$ number $7|\mathcal S|$, and $(A,b)\mapsto(b^{-1}A,b)$ maps them bijectively to the pairs $(B,b)$ with $B\in\mathcal S$, $1\in B$ and $b\in F^*$, which number $(q-1)N_n/6$. So $|\mathcal S|=N_n(q-1)/42$. By Lemma~\ref{lem:reduction}(b), an affine subspace has zero sum exactly when its linear part does, and each linear part has $2^{n-3}$ cosets. The numbers are positive for $n\ge7$ by the bound after Theorem~\ref{thm:count}, and $N_5=0$ because $K_5=11$.
+\end{proof}
+
+\begin{remark}
+For $n=5$, Corollary~\ref{cor:conj} gives a second proof that $W_5=X^7$ is third-order sum-free. For $n=3$ the polynomial $g(x,Y)$ vanishes identically, and indeed $N_3=6=2^3-2$ since $K_3=-5$.
+\end{remark}
+
+\section*{Declarations}
+
+\subsection*{Funding} No funding was received for conducting this study.
+
+\subsection*{Competing interests} The author has no competing interests to declare that are relevant to the content of this article.
+
+\subsection*{Data availability} No data were used for the research described in this article.
+
+\subsection*{Use of generative AI} During the preparation of this work the author used Claude (Anthropic) to search the literature, to find and check the proofs, and to draft the text. The author checked every step of the proofs and every reference, and takes full responsibility for the content.
+
+\begin{thebibliography}{9}
+
+\bibitem{CCD}
+A.~Canteaut, P.~Charpin and H.~Dobbertin, \emph{Binary $m$-sequences with three-valued crosscorrelation: a proof of Welch's conjecture}, IEEE Trans. Inform. Theory \textbf{46} (2000), 4--8. \doi{10.1109/18.817504}
+
+\bibitem{Carlet-DCC}
+C.~Carlet, \emph{On the vector subspaces of $\F_{2^n}$ over which the multiplicative inverse function sums to zero}, Des. Codes Cryptogr. \textbf{93} (2025), 1237--1254. \doi{10.1007/s10623-024-01531-6}
+
+\bibitem{Carlet-JC}
+C.~Carlet, \emph{Two generalizations of almost perfect nonlinearity}, J. Cryptology \textbf{38} (2025), Paper No.~20. \doi{10.1007/s00145-025-09538-5}
+
+\bibitem{Carlitz}
+L.~Carlitz, \emph{Kloosterman sums and finite field extensions}, Acta Arith. \textbf{16} (1969), 179--194. \doi{10.4064/aa-16-2-179-194}
+
+\bibitem{Dobbertin}
+H.~Dobbertin, \emph{Almost perfect nonlinear power functions on $GF(2^n)$: the Welch case}, IEEE Trans. Inform. Theory \textbf{45} (1999), 1271--1275. \doi{10.1109/18.761283}
+
+\bibitem{HZ}
+X.~Hou and S.~Zhao, \emph{Further results on sum-freedom of binary and $q$-ary functions}, preprint, 2026. \href{https://arxiv.org/abs/2609.31489}{arXiv:2609.31489}
+
+\bibitem{LN}
+R.~Lidl and H.~Niederreiter, \emph{Finite Fields}, 2nd ed., Encyclopedia Math. Appl. \textbf{20}, Cambridge University Press, Cambridge, 1997. \doi{10.1017/CBO9780511525926}
+
+\bibitem{Weil}
+A.~Weil, \emph{On some exponential sums}, Proc. Nat. Acad. Sci. U.S.A. \textbf{34} (1948), 204--207. \doi{10.1073/pnas.34.5.204}
+
+\end{thebibliography}
+
+\end{document}

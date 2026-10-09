@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "The Welch function is not third-order sum-free"
+type: software
+authors:
+  - family-names: Bhattacharjee
+    given-names: Deep
+    orcid: "https://orcid.org/0000-0003-0466-750X"
+    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+    email: d.bhattacharjee@erl-forschung.de
+version: 1.0.0
+date-released: 2026-10-09
+license: MIT
+repository-code: "https://github.com/creelie/eConjectureWelchSumFree"
+keywords:
+  - sum-free functions
+  - Welch function
+  - almost perfect nonlinear functions
+  - Kloosterman sums
+  - linearized polynomials
+abstract: >-
+  Let n = 2m+1. Hou and Zhao conjectured that for n >= 7 the Welch function
+  X^(2^m+3) on F_(2^n) sums to zero over some three-dimensional affine
+  subspace, that is, it is not third-order sum-free. We prove this. The
+  proof counts exactly the elements x for which some subspace spanned by 1,
+  x and a third element gives a zero sum: there are (2^n+1-3K_n)/4 of them,
+  where K_n is a binary Kloosterman sum.
+references:
+  - type: article
+    title: "Further results on sum-freedom of binary and q-ary functions"
+    authors:
+      - family-names: Hou
+        given-names: Xiang-dong
+      - family-names: Zhao
+        given-names: Shujun
+    year: 2026
+    url: "https://arxiv.org/abs/2609.31489"
+    notes: "arXiv:2609.31489"

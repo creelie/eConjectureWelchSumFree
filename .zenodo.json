@@ -1,0 +1,40 @@
+{
+  "title": "The Welch function is not third-order sum-free",
+  "version": "1.0.0",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {
+      "name": "Bhattacharjee, Deep",
+      "orcid": "0000-0003-0466-750X",
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+    }
+  ],
+  "description": "<p>Let n = 2m+1. Hou and Zhao conjectured that for n &ge; 7 the Welch function X<sup>2<sup>m</sup>+3</sup> on F<sub>2<sup>n</sup></sub> sums to zero over some three-dimensional affine subspace, that is, it is not third-order sum-free (arXiv:2609.31489, Conjecture 4.10). We prove this. For x outside F<sub>2</sub> and u = x<sup>2<sup>m</sup></sup>, the subspaces spanned by 1, x and a third element with zero sum exist exactly when Tr(1/(x+u)) = Tr(xu/(x+u)) = 1, so there are (2<sup>n</sup>+1&minus;3K<sub>n</sub>)/4 such x, where K<sub>n</sub> is the Kloosterman sum of F<sub>2<sup>n</sup></sub>. Weil's bound makes this positive for every n &ge; 7, and the count reproduces every value Hou and Zhao computed.</p><p>The archive contains the paper (PDF, LaTeX source, arXiv tarball) and independent checks in C, C++, Bash, Python, Julia and Lean 4: the criterion at every element of F<sub>2<sup>n</sup></sub> for odd n &le; 21, the zero-sum subspaces counted from the definition for n &le; 11, Lean kernel checks for n = 5 and 7, and Lean 4 + Mathlib proofs of the algebraic identities of the proof.</p>",
+  "keywords": [
+    "sum-free functions",
+    "Welch function",
+    "almost perfect nonlinear functions",
+    "Kloosterman sums",
+    "linearized polynomials",
+    "11T06",
+    "11T23",
+    "94A60"
+  ],
+  "license": "MIT",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/creelie/eConjectureWelchSumFree",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "arXiv:2609.31489",
+      "relation": "references",
+      "resource_type": "publication-preprint",
+      "scheme": "arxiv"
+    }
+  ],
+  "notes": "Corresponding author: d.bhattacharjee@erl-forschung.de; also itsdeep@live.com."
+}
