@@ -63,7 +63,12 @@ runs them on every pull request.
 
 ## Citation
 
-See `CITATION.cff`.
+See `CITATION.cff`. Releases:
+
+| Release | Link |
+|---|---|
+| v1.1.0 | https://github.com/creelie/eConjectureWelchSumFree/releases/tag/v1.1.0 |
+| v1.0.0 | https://github.com/creelie/eConjectureWelchSumFree/releases/tag/v1.0.0 |
 
 ## Licence
 

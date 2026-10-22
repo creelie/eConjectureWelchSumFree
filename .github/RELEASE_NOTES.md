@@ -13,6 +13,8 @@ Let n = 2m+1. Hou and Zhao conjectured (arXiv:2609.31489, Conjecture 4.10) that 
 
 The proofs are by hand. Checks in C and Python test the criterion and every lemma at every element of F_(2^n) (n ≤ 21 and n ≤ 13); C++ counts the zero-sum subspaces from the definition for n ≤ 11; Julia and Bash check the count and Table 1; a Lean kernel certificate settles n = 5 and n = 7, and Lean 4 + Mathlib proves the algebraic identities of the proof.
 
+Release v1.1.0 makes the Data availability section of the paper cite this release, which holds the checks, and adds `paper/paper1` (PDF) and `paper/paper2` (LaTeX source zip). The mathematics is unchanged from v1.0.0.
+
 Files:
 - `welch-third-order-sum-free.pdf`: the paper
 - `welch-third-order-sum-free-tex.zip`: LaTeX source
