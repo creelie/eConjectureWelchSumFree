@@ -45,4 +45,9 @@ cp main.tex "$STAGE/arxiv/"
 tar -czf "$DIST/$NAME-arxiv.tar.gz" -C "$STAGE/arxiv" .
 
 rm -f main.aux main.log main.out main.pdf
-ls -l "$DIST"
+
+echo "== paper/paper1 (PDF) and paper/paper2 (tex.zip)"
+mkdir -p "$ROOT/paper/paper1" "$ROOT/paper/paper2"
+cp "$DIST/$NAME.pdf" "$ROOT/paper/paper1/"
+cp "$DIST/$NAME-tex.zip" "$ROOT/paper/paper2/"
+ls -l "$DIST" "$ROOT/paper/paper1" "$ROOT/paper/paper2"
