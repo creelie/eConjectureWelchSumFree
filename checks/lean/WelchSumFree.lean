@@ -12,7 +12,7 @@
                      Tr(1/(x+u)) = Tr(xu/(x+u)) = 1 with u = x^8 (Theorem 1.1 for n = 7).
   * `n7_kloosterman` : the Kloosterman sum of F_128 is -13, so (2^7 + 1 - 3 K_7)/4 = 42 (Theorem 1.2).
   * `n7_witness`   : x = X, y = X^3 gives g(x,y) = 0 with 1, x, y independent, so X^11 sums to zero
-                     over the subspace spanned by 1, X, X^3 of F_128 (Conjecture 4.10 of Hou and Zhao
+                     over the subspace spanned by 1, X, X^3 of F_128 (Conjecture 5.10 of Hou and Zhao
                      for n = 7, directly from the definition).
   * `n5_count`, `n5_sumfree` : in F_32 no x has |Z(x)| = 8, and X^7 sums to a nonzero value over
                      every three-dimensional linear subspace of F_32 (the case n = 5).
