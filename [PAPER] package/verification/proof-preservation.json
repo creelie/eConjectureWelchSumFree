@@ -2,5 +2,7 @@
   "proof_bodies_unchanged": true,
   "proof_environments": 13,
   "old_source_sha256": "ddbd1251c2706d60ecffe6964cd1648fda681b1c50ddaadb6870fa3930b56098",
-  "new_source_sha256": "a0daa6292dbb9fc59a2863f399b991d7e872410d26dea80aa7fd7337e87a7ec2"
+  "source_digest_at_initial_comparison": "a0daa6292dbb9fc59a2863f399b991d7e872410d26dea80aa7fd7337e87a7ec2",
+  "final_manuscript_source_sha256": "96daa3dce085845ddea04a059f1b7ac92930278eb4efa9f23c143899aceb97f6",
+  "note": "The initial comparison predates a bibliography-only arXiv version pin in the Welch paper. Mathematical proof bodies remain unchanged."
 }

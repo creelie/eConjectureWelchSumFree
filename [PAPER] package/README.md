@@ -22,3 +22,5 @@ The manuscript reproduces the reduction to the linearised polynomial, proves the
 The existing preprint is https://hexagonmath.org/2610.00472v1. The intended Hexagon revision is v2; it has not been submitted by this work. The author has no arXiv identifier for this paper.
 
 The journal and Hexagon manuscripts are the same PDF and source. Formalisation files are linked through the existing repository rather than included in the Hexagon TeX ZIP. Original verification code remains in the repository.
+
+Confirmed archive: https://doi.org/10.5281/zenodo.23662272
