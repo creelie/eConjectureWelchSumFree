@@ -41,7 +41,7 @@ incomplete version of the paper appeared on Hexagon as
 
 ## Layout
 
-- `paper/main.tex`: the LaTeX source; `paper/main.pdf` the compiled paper (9 pages, single column).
+- `paper/main.tex`: the LaTeX source; `paper/main.pdf` the compiled paper (8 pages, amsart, single column).
 - `dist/`: the paper as `WelchSumFree_final2.pdf`, its source zip and the arXiv tarball.
 - `checks/c/welch_criterion.c`: every x in F_{2^n} for odd 3 <= n <= 21: dim Z(x) in {2,3} by Gaussian elimination, Theorem 1.1 at every x, Theorem 1.2 with K_n summed directly, and Carlitz's recurrence for K_n.
 - `checks/cpp/welch_subspaces.cpp`: straight from the definition, the three-dimensional subspaces of F_{2^n} on which X^(2^m+3) sums to zero, counted for n = 3, 5, 7, 9, 11 (1, 0, 127, 1606, 22517 = N_n (2^n-1)/42); Lemma 2.3 on random subspaces.

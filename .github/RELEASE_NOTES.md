@@ -1,4 +1,4 @@
-Deep Bhattacharjee, *The Welch function is not third-order sum-free*. Final revision, single column, 9 pages.
+Deep Bhattacharjee, *The Welch function is not third-order sum-free*. Final revision, single column (amsart), 8 pages.
 
 The paper proves Conjecture 5.10 of X. Hou and S. Zhao, *Further results on sum-freedom of
 binary and q-ary functions* (arXiv:2609.31489): for n = 2m+1 >= 7 the Welch function
