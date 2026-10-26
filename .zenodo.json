@@ -1,40 +1,29 @@
 {
-  "title": "The Welch function is not third-order sum-free",
-  "version": "1.2.0",
-  "upload_type": "publication",
-  "publication_type": "preprint",
+  "title": "The Welch function is not third-order sum-free: paper and checking programs",
+  "upload_type": "software",
+  "description": "<p>Final revision of the paper, single column, 9 pages, with its LaTeX source and the programs that check its statements on small fields. The paper proves Conjecture 5.10 of X. Hou and S. Zhao, Further results on sum-freedom of binary and q-ary functions (arXiv:2609.31489): for n = 2m+1 at least 7 the Welch function X^(2^m+3) on F_(2^n) is not third-order sum-free. With u = x^(2^m), the kernel Z(x) of the linearised polynomial of Hou and Zhao has dimension 3 exactly when Tr(1/(x+u)) = Tr(xu/(x+u)) = 1, the number of such x is (2^n + 1 - 3K_n)/4 with K_n the Kloosterman sum of F_(2^n), and Weil's bound makes it positive for n at least 7. Every statement is proved by hand; no statement rests on the programs.</p><p>The results were first made public on 9 October 2026 as release v1.0.0 of this repository (later versions archived under the concept DOI 10.5281/zenodo.23553009). An earlier and incomplete version of the paper appeared on Hexagon as hexagon:2610.00472.</p>",
   "creators": [
     {
       "name": "Bhattacharjee, Deep",
       "orcid": "0000-0003-0466-750X",
-      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; Formerly, University of Calcutta, Senate House, 87/1 College Street, Kolkata 700073, West Bengal, India"
     }
   ],
-  "description": "<p>The paper proves that the Welch function is not third-order sum-free for every odd n >= 7, with an exact Kloosterman-sum formula counting the relevant elements and zero-sum subspaces.</p><p>Submission package revision. Lean checks supplied algebraic identities and finite-field certificates for n = 5 and n = 7. The complete general trace and character-sum proof is written mathematics; it is not a complete Lean formalisation. Finite computations are supporting checks, not the proof for all n. The successful prior repository CI is recorded in verification/previous-ci.json; no new local Lean rebuild is claimed by this package.</p>",
   "keywords": [
-    "sum-free functions",
+    "sum-free function",
     "Welch function",
-    "almost perfect nonlinear functions",
-    "Kloosterman sums",
-    "linearized polynomials",
+    "almost perfect nonlinear function",
+    "Kloosterman sum",
     "11T06",
     "11T23",
-    "94A60"
+    "94A60",
+    "06E30"
   ],
-  "license": "cc-by-4.0",
-  "language": "eng",
+  "license": "mit-license",
   "related_identifiers": [
-    {
-      "identifier": "arXiv:2609.31489",
-      "relation": "references",
-      "resource_type": "publication-preprint",
-      "scheme": "arxiv"
-    },
-    {
-      "identifier": "https://hexagonmath.org/2610.00472v1",
-      "relation": "isNewVersionOf",
-      "scheme": "url"
-    }
+    {"identifier": "arXiv:2609.31489", "relation": "references", "scheme": "arxiv"},
+    {"identifier": "https://hexagonmath.org/2610.00472", "scheme": "url", "relation": "isNewVersionOf"},
+    {"identifier": "10.5281/zenodo.23553009", "scheme": "doi", "relation": "isNewVersionOf"}
   ],
-  "notes": "Prepared for Finite Fields and Their Applications. Manuscript and new submission materials: CC BY 4.0; original code: MIT. Existing Hexagon preprint: https://hexagonmath.org/2610.00472v1. Human-understanding declaration retained: some parts."
+  "access_right": "open"
 }

@@ -1,36 +1,62 @@
 name: release
 
-# Run by hand from the Actions tab (or the API) after the PR is merged:
-# it tags the chosen commit, publishes a GitHub release with the files in
-# dist/ and the notes in .github/RELEASE_NOTES.md.
+# Run by hand from the Actions tab after the pull request is merged. It runs the C, C++, bash,
+# Python, Julia and Lean checks, then publishes a GitHub release with the paper files in dist/
+# and the notes in .github/RELEASE_NOTES.md.
 
 on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Release tag, e.g. v1.0.0"
+        description: "Release tag, e.g. v2.0.0"
         required: true
-        default: "v1.1.0"
+        default: "v2.0.0"
       target:
         description: "Branch or commit to tag"
         required: true
         default: "main"
+      title:
+        description: "Release title"
+        required: true
+        default: "The Welch function is not third-order sum-free"
 
 permissions:
   contents: write
 
 jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.target }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: "1.10"
+      - name: Install Lean 4.34.1
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+            | sh -s -- -y --default-toolchain leanprover/lean4:v4.34.1
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: C, C++, bash, Python, Julia and Lean checks
+        run: ./run_all.sh
+
   release:
+    needs: checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ inputs.target }}
-      - name: Check the release files
+      - name: Check the paper files
         run: |
-          for f in dist/welch-third-order-sum-free.pdf \
-                   dist/welch-third-order-sum-free-tex.zip \
-                   dist/welch-third-order-sum-free-arxiv.tar.gz; do
+          for f in dist/WelchSumFree_final2.pdf \
+                   dist/WelchSumFree_final2-tex.zip \
+                   dist/WelchSumFree_final2-arxiv.tar.gz; do
             test -s "$f" || { echo "missing $f"; exit 1; }
           done
       - name: Publish the release
@@ -38,8 +64,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ inputs.tag }}
           TARGET: ${{ inputs.target }}
+          TITLE: ${{ inputs.title }}
         run: |
-          gh release create "$TAG" dist/* \
+          gh release create "$TAG" dist/WelchSumFree_final2* \
             --target "$TARGET" \
-            --title "$TAG: The Welch function is not third-order sum-free" \
+            --title "$TAG: $TITLE" \
             --notes-file .github/RELEASE_NOTES.md
