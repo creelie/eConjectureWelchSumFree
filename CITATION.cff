@@ -12,6 +12,7 @@ license: MIT
 repository-code: "https://github.com/creelie/eConjectureWelchSumFree"
 url: "https://github.com/creelie/eConjectureWelchSumFree/releases/tag/v2.0.0"
 version: 2.0.0
+doi: 10.5281/zenodo.23663217
 date-released: 2026-10-26
 keywords:
   - sum-free function
