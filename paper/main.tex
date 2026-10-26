@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper,reqno]{amsart}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -8,6 +8,7 @@
 \usepackage[margin=28mm]{geometry}
 \usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
+\usepackage{orcidlink}
 \usepackage{microtype}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -24,30 +25,30 @@
 \newcommand{\Tr}{\operatorname{Tr}}
 \hypersetup{pdftitle={The Welch function is not third-order sum-free},pdfauthor={Deep Bhattacharjee}}
 
-\title{The Welch function is not third-order sum-free}
+\title[The Welch function is not third-order sum-free]{The Welch function is not third-order sum-free}
 
-\author{Deep Bhattacharjee\thanks{Corresponding author. Email: \href{mailto:d.bhattacharjee@erl-forschung.de}{d.bhattacharjee@erl-forschung.de}, \href{mailto:itsdeep@live.com}{itsdeep@live.com}, \href{mailto:egspl@proton.me}{egspl@proton.me}. ORCID: \href{https://orcid.org/0000-0003-0466-750X}{0000-0003-0466-750X}.}\\[2pt]
-\normalsize Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL),\\
-\normalsize Bhubaneswar, Odisha 751030, India\\[1pt]
-\normalsize Formerly, University of Calcutta, Senate House, 87/1 College Street,\\
-\normalsize Kolkata 700073, West Bengal, India}
+\author{Deep Bhattacharjee\,\orcidlink{0000-0003-0466-750X}}
+\address{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India}
+\address{Formerly, University of Calcutta, Senate House, 87/1 College Street, Kolkata 700073, West Bengal, India}
+\email{d.bhattacharjee@erl-forschung.de}
+\email{itsdeep@live.com}
+\email{egspl@proton.me}
+\thanks{\sloppy Corresponding author: Deep Bhattacharjee. Email: \href{mailto:d.bhattacharjee@erl-forschung.de}{d.bhattacharjee@erl-forschung.de}, \href{mailto:itsdeep@live.com}{itsdeep@live.com}, \href{mailto:egspl@proton.me}{egspl@proton.me}; ORCID \href{https://orcid.org/0000-0003-0466-750X}{0000-0003-0466-750X}.}
 
+\subjclass[2020]{11T06; 11T23; 94A60; 06E30}
+\keywords{sum-free function; Welch function; almost perfect nonlinear function; Kloosterman sum}
 \date{26 October 2026}
 
 \begin{document}
-
-\maketitle
 
 \begin{abstract}
 \itshape
 Let $n=2m+1$ be odd and let $\F_{2^n}$ be the field with $2^n$ elements. A function on $\F_{2^n}$ is third-order sum-free when its values over any eight elements forming a three-dimensional affine subspace never add up to zero. The Welch function is the power map $x\mapsto x^{2^m+3}$; it is one of the classical almost perfect nonlinear functions, and Hou and Zhao conjectured that for $n\ge7$ it is not third-order sum-free. We prove this. The question comes down to a linearised polynomial $g(x,y)$ in $y$ whose roots form a vector space $Z(x)$ over $\F_2$ containing $1$ and $x$, and the Welch function fails to be third-order sum-free exactly when $Z(x)$ has dimension three for some $x$ outside $\F_2$. We show that the dimension is always $2$ or $3$, and that it is $3$ if and only if two explicit trace conditions hold: with $u=x^{2^m}$, both $\Tr(1/(x+u))$ and $\Tr(xu/(x+u))$ equal $1$. The proof applies the field automorphism $z\mapsto z^{2^{m+1}}$, whose square is the Frobenius map, to turn $g$ into an additive polynomial of degree eight whose roots always lie in $\F_{2^n}$. Counting the elements that satisfy both trace conditions gives exactly $(2^n+1-3K_n)/4$ of them, where $K_n$ is the binary Kloosterman sum of $\F_{2^n}$, and Weil's bound $|K_n|\le 2^{n/2+1}$ makes this count positive for every $n\ge7$. The Welch function sums to zero over exactly $(2^n+1-3K_n)(2^n-1)/168$ three-dimensional linear subspaces, and the count $2+(2^n+1-3K_n)/4$ agrees with the numbers that Hou and Zhao computed for $n\le15$. Every statement is proved by hand.
 \end{abstract}
 
-\medskip
-\noindent\textbf{Keywords.} sum-free function; Welch function; almost perfect nonlinear function; Kloosterman sum.
+\maketitle
 
-\smallskip
-\noindent\textbf{MSC 2020.} 11T06; 11T23; 94A60; 06E30.
+
 
 \medskip
 \begin{quote}
