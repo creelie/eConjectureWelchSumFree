@@ -33,7 +33,8 @@ paper rests on them.
 The results were first made public on 9 October 2026 as release v1.0.0 of this repository
 (later versions archived on Zenodo as
 [10.5281/zenodo.23553010](https://doi.org/10.5281/zenodo.23553010) and
-[10.5281/zenodo.23662272](https://doi.org/10.5281/zenodo.23662272), concept DOI
+[10.5281/zenodo.23662272](https://doi.org/10.5281/zenodo.23662272); this revision
+[10.5281/zenodo.23663217](https://doi.org/10.5281/zenodo.23663217), concept DOI
 [10.5281/zenodo.23553009](https://doi.org/10.5281/zenodo.23553009)); an earlier and
 incomplete version of the paper appeared on Hexagon as
 [hexagon:2610.00472](https://hexagonmath.org/2610.00472) on 22 October 2026.
@@ -64,7 +65,7 @@ Each release carries the paper files of `dist/`.
 
 | Release | DOI |
 | --- | --- |
-| v2.0.0 | to be recorded |
+| v2.0.0 | [10.5281/zenodo.23663217](https://doi.org/10.5281/zenodo.23663217) |
 | v1.2.0 | [10.5281/zenodo.23662272](https://doi.org/10.5281/zenodo.23662272) |
 | v1.1.0 | [10.5281/zenodo.23553010](https://doi.org/10.5281/zenodo.23553010) |
 | v1.0.0 | 9 October 2026, first public record |
