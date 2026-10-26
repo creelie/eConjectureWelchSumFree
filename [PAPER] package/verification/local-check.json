@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checker": "verification/python/verify_steps.py",
+  "all_field_elements_for_odd_n": [
+    3,
+    5,
+    7,
+    9,
+    11,
+    13
+  ],
+  "also_checked": "Polynomial identities over F_2",
+  "general_proof": false
+}

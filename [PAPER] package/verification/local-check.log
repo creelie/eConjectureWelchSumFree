@@ -1,0 +1,16 @@
+ok   t = d^2 + d + v
+ok   t^4 P(y) = (d+v) d^4 Pi^2 + t^3 v^2 Pi  (Lemma 3.3)
+ok   P(1) = 0
+ok   P(x) = 0
+ok   Pi(y) = y(y+1)(y+x)(y+x+1)
+ok   identity (3.3) times d^4(d+v)
+ok   t v = v d^2 + v d + v^2  (Tr(tv/d^2) = 0)
+ok   t v = v (d+v) + v d^2  (gamma = v/d^2 + v/(d+v))
+ok   v + t = d^2 + d
+ok   n=3: every step at all 6 elements x; N_n = 6, K_n = -5
+ok   n=5: every step at all 30 elements x; N_n = 0, K_n = 11
+ok   n=7: every step at all 126 elements x; N_n = 42, K_n = -13
+ok   n=9: every step at all 510 elements x; N_n = 132, K_n = -5
+ok   n=11: every step at all 2046 elements x; N_n = 462, K_n = 67
+ok   n=13: every step at all 8190 elements x; N_n = 2184, K_n = -181
+ALL OK

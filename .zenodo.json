@@ -1,6 +1,6 @@
 {
   "title": "The Welch function is not third-order sum-free",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "upload_type": "publication",
   "publication_type": "preprint",
   "creators": [
@@ -10,7 +10,7 @@
       "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
     }
   ],
-  "description": "<p>Let n = 2m+1. Hou and Zhao conjectured that for n &ge; 7 the Welch function X<sup>2<sup>m</sup>+3</sup> on F<sub>2<sup>n</sup></sub> sums to zero over some three-dimensional affine subspace, that is, it is not third-order sum-free (arXiv:2609.31489, Conjecture 4.10). We prove this. For x outside F<sub>2</sub> and u = x<sup>2<sup>m</sup></sup>, the subspaces spanned by 1, x and a third element with zero sum exist exactly when Tr(1/(x+u)) = Tr(xu/(x+u)) = 1, so there are (2<sup>n</sup>+1&minus;3K<sub>n</sub>)/4 such x, where K<sub>n</sub> is the Kloosterman sum of F<sub>2<sup>n</sup></sub>. Weil's bound makes this positive for every n &ge; 7, and the count reproduces every value Hou and Zhao computed.</p><p>The archive contains the paper (PDF, LaTeX source, arXiv tarball) and independent checks in C, C++, Bash, Python, Julia and Lean 4: the criterion at every element of F<sub>2<sup>n</sup></sub> for odd n &le; 21, the zero-sum subspaces counted from the definition for n &le; 11, Lean kernel checks for n = 5 and 7, and Lean 4 + Mathlib proofs of the algebraic identities of the proof.</p>",
+  "description": "<p>The paper proves that the Welch function is not third-order sum-free for every odd n >= 7, with an exact Kloosterman-sum formula counting the relevant elements and zero-sum subspaces.</p><p>Submission package revision. Lean checks supplied algebraic identities and finite-field certificates for n = 5 and n = 7. The complete general trace and character-sum proof is written mathematics; it is not a complete Lean formalisation. Finite computations are supporting checks, not the proof for all n. The successful prior repository CI is recorded in verification/previous-ci.json; no new local Lean rebuild is claimed by this package.</p>",
   "keywords": [
     "sum-free functions",
     "Welch function",
@@ -21,20 +21,20 @@
     "11T23",
     "94A60"
   ],
-  "license": "MIT",
+  "license": "cc-by-4.0",
   "language": "eng",
   "related_identifiers": [
-    {
-      "identifier": "https://github.com/creelie/eConjectureWelchSumFree",
-      "relation": "isSupplementedBy",
-      "resource_type": "software"
-    },
     {
       "identifier": "arXiv:2609.31489",
       "relation": "references",
       "resource_type": "publication-preprint",
       "scheme": "arxiv"
+    },
+    {
+      "identifier": "https://hexagonmath.org/2610.00472v1",
+      "relation": "isNewVersionOf",
+      "scheme": "url"
     }
   ],
-  "notes": "Corresponding author: d.bhattacharjee@erl-forschung.de; also itsdeep@live.com."
+  "notes": "Prepared for Finite Fields and Their Applications. Manuscript and new submission materials: CC BY 4.0; original code: MIT. Existing Hexagon preprint: https://hexagonmath.org/2610.00472v1. Human-understanding declaration retained: some parts."
 }

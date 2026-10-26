@@ -1,0 +1,4 @@
+The Welch function is not third-order sum-free for every odd n >= 7.
+A two-trace criterion determines the dimension of the relevant kernel.
+A binary Kloosterman sum gives an exact count of zero-sum subspaces.
+The general proof is accompanied by code and specified Lean checks.
